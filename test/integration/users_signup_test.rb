@@ -9,10 +9,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 				password: "foo", password_confirmation: "bar" } }
 		end
 		assert_template 'users/new'
-		assert_select 'form[action="/signup"]'
+		assert_select 'form[class="new_user"]'
 		assert_select 'div#error_explanation'
-		assert_select 'div.field_with_errors', count: 8
-		assert_select 'div.alert'
+		assert_select 'div.alert', /4/
 	end
 
 	test "valid signup information" do
