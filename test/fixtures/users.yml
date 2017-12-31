@@ -21,7 +21,7 @@ lana:
   email: hands@example.gov
   password_digest: <%= User.digest('password') %>
   activated: false
-  activated_at: nil
+  # activated_at: 
 
 malory:
   name: Malory Archer
