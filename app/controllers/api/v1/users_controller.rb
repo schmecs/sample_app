@@ -5,9 +5,9 @@ class Api::V1::UsersController < ApplicationController
     render json: @user, serializer: Api::V1::UserSerializer
   end
 
-  # def index
-  #   @users = User.where(activated: true)
-  #   render json: @users, serializer: Api::V1::UserSerializer
-  # end
+  def index
+    @users = User.where(activated: true)
+    render json: @users, each_serializer: Api::V1::UserIndexSerializer
+  end
 
 end
