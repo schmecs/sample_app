@@ -38,5 +38,11 @@ Rails.application.routes.draw do
 
   resources :relationships,       only: [:create, :destroy]
 
+  namespace :api do
+    namespace :v1 do
+      resources :users
+      resources :microposts
+    end
+  end
 
 end
