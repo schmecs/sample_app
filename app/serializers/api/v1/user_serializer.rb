@@ -1,5 +1,5 @@
 class Api::V1::UserSerializer < ActiveModel::Serializer
-  attributes :name, :email
+  attributes :id, :name, :email
 
   has_many :microposts, serializer: Api::V1::MicropostSerializer
 	has_many :following, through: :active_relationships, source: :followed, serializer: Api::V1::UserSerializer
