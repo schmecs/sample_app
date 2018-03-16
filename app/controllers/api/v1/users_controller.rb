@@ -1,4 +1,6 @@
-class Api::V1::UsersController < ApplicationController
+class Api::V1::UsersController < Api::V1::BaseApiController
+
+	# start here including responses for user not found
 
 	def show
   	@user = User.find(params[:id])
